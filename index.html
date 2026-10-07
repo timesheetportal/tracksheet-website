@@ -101,7 +101,7 @@ h2{font-size:clamp(1.7rem,3.4vw,2.4rem);line-height:1.12;letter-spacing:-.02em;m
 }
 
 /* demo video */
-.demo{margin:clamp(40px,6vw,72px) 0 0}
+.demo{margin:clamp(32px,5vw,56px) 0 0}
 .demo video{display:block;width:100%;height:auto;background:var(--board);border:3px solid var(--signage);border-radius:6px}
 .demo figcaption{margin-top:12px;font-size:.9rem;color:var(--ballast)}
 
@@ -167,16 +167,12 @@ footer p{margin:0 0 6px}
         <a href="#how">See how it works</a>
       </div>
 
-      <figure class="board" role="img" aria-label="Sample timesheet showing three shifts filled in automatically from a roster, ready to sign" style="margin-left:0;margin-right:0">
-        <div class="board-head"><span>Alex Morgan</span><span>Week 12</span></div>
-        <ol class="rows">
-          <li><span>Sat</span><span>08:00</span><span>Sample Depot</span><span class="client">Demo Rail Co</span><span class="hrs">12 hrs</span></li>
-          <li><span>Sun</span><span>08:00</span><span>Sample Depot</span><span class="client">Demo Rail Co</span><span class="hrs">12 hrs</span></li>
-          <li><span>Wed</span><span>20:00</span><span>Test Junction</span><span class="client">Example JV</span><span class="hrs">12 hrs</span></li>
-        </ol>
-        <div class="board-foot">All clear. Ready to sign.</div>
+      <figure class="demo">
+        <video id="demoVideo" controls muted loop playsinline preload="metadata" poster="demo-poster.jpg" aria-label="Screen recording of a member of staff choosing their name, checking their shifts, signing and downloading a timesheet">
+          <source src="demo.mp4" type="video/mp4">
+        </video>
+        <figcaption>A member of staff completing a timesheet. Shifts come straight from the roster. Sample data.</figcaption>
       </figure>
-      <p class="caption">Sample data. Shifts come straight from the roster, so nobody types them in.</p>
     </div>
   </section>
 
@@ -203,12 +199,7 @@ footer p{margin:0 0 6px}
           <p>Sign on screen, then download the PDF or share it straight to payroll from a phone.</p>
         </li>
       </ol>
-      <figure class="demo">
-        <video id="demoVideo" controls muted loop playsinline preload="metadata" poster="demo-poster.jpg" aria-label="Screen recording of a member of staff choosing their name, checking their shifts, signing and downloading a timesheet">
-          <source src="demo.mp4" type="video/mp4">
-        </video>
-        <figcaption>A member of staff completing a timesheet. Sample data.</figcaption>
-      </figure>
+
     </div>
   </section>
 
