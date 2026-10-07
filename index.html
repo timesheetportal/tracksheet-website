@@ -8,7 +8,7 @@
 <meta property="og:type" content="website">
 <meta property="og:title" content="TrackSheet: timesheets that fill themselves in">
 <meta property="og:description" content="TrackSheet turns your weekly roster into ready-to-sign timesheets for railway staff.">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 32 32%22%3E%3Crect width=%2232%22 height=%2232%22 rx=%226%22 fill=%22%230b2a4a%22/%3E%3Cpath d=%22M9 7v18M16 7v18M23 7v18%22 stroke=%22%23ffb938%22 stroke-width=%222.5%22/%3E%3Cpath d=%22M3 12h26M3 20h26%22 stroke=%22white%22 stroke-width=%222.5%22/%3E%3C/svg%3E">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 32 32%22%3E%3Crect x=%22.5%22 y=%22.5%22 width=%2231%22 height=%2231%22 rx=%225%22 fill=%22%23fff%22 stroke=%22%230b2a4a%22/%3E%3Cpath d=%22M8 2v28M16 2v28M24 2v28M2 8h28M2 16h28M2 24h28%22 stroke=%22%23b9c8d4%22/%3E%3Cpath d=%22M6 8h20M6 14h20M6 20h20M6 26h20%22 stroke=%22%23e59a00%22 stroke-width=%222.6%22/%3E%3Cpath d=%22M11 2v28M21 2v28%22 stroke=%22%230b2a4a%22 stroke-width=%222.4%22/%3E%3C/svg%3E">
 <style>
 :root{
   --platform:#f3f6f8;
@@ -109,11 +109,16 @@ h2{font-size:clamp(1.7rem,3.4vw,2.4rem);line-height:1.12;letter-spacing:-.02em;m
 .list dd{margin:0}
 @media (max-width:860px){.split{grid-template-columns:1fr}}
 
+/* the one thing we want noticed */
+.feature{margin-top:clamp(36px,6vw,64px);background:var(--signage);color:#fff;border-left:8px solid var(--amber);border-radius:3px;padding:clamp(24px,4vw,44px)}
+.feature h3{font-size:clamp(1.6rem,3.4vw,2.4rem);line-height:1.1;letter-spacing:-.02em;margin:0 0 12px;color:#fff}
+.feature p{margin:0;max-width:52ch;font-size:1.15rem;color:#dbe6f0}
+
 /* data */
-.facts{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:32px 48px;margin:0;padding:0;list-style:none}
+.facts{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:32px 48px;margin:0;padding:0;list-style:none}
 .facts li{border-top:3px solid var(--signage);padding-top:14px}
 .facts strong{display:block;color:var(--signage);margin-bottom:4px}
-@media (max-width:700px){.facts{grid-template-columns:1fr}}
+@media (max-width:800px){.facts{grid-template-columns:1fr}}
 
 /* pricing band */
 .band{background:var(--signage);color:#fff}
@@ -135,14 +140,14 @@ footer p{margin:0 0 6px}
 <header class="site">
   <div class="wrap bar">
     <a class="brand" href="/" aria-label="TrackSheet home">
-      <svg width="30" height="30" viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="6" fill="#0b2a4a"/><path d="M9 7v18M16 7v18M23 7v18" stroke="#ffb938" stroke-width="2.5"/><path d="M3 12h26M3 20h26" stroke="#fff" stroke-width="2.5"/></svg>
+      <svg width="34" height="34" viewBox="0 0 32 32" aria-hidden="true"><rect x=".5" y=".5" width="31" height="31" rx="5" fill="#fff" stroke="#0b2a4a"/><path d="M8 2v28M16 2v28M24 2v28M2 8h28M2 16h28M2 24h28" stroke="#b9c8d4" stroke-width="1"/><path d="M6 8h20M6 14h20M6 20h20M6 26h20" stroke="#e59a00" stroke-width="2.6"/><path d="M11 2v28M21 2v28" stroke="#0b2a4a" stroke-width="2.4"/></svg>
       TrackSheet
     </a>
     <nav aria-label="Main">
       <a class="link" href="#how">How it works</a>
       <a class="link" href="#payroll">For payroll</a>
       <a class="link" href="#data">Your data</a>
-      <a class="btn small" href="mailto:hello@tracksheet.co.uk?subject=TrackSheet%20demo">Book a demo</a>
+      <a class="btn small" href="mailto:enquiries@tracksheet.co.uk?subject=TrackSheet%20demo">Book a demo</a>
     </nav>
   </div>
 </header>
@@ -153,7 +158,7 @@ footer p{margin:0 0 6px}
       <h1>Timesheets that fill themselves in</h1>
       <p class="lead">TrackSheet takes the roster you already build each week and gives every member of staff a finished timesheet to check, sign and send. Built for railway companies, by someone who works in the industry.</p>
       <div class="actions">
-        <a class="btn" href="mailto:hello@tracksheet.co.uk?subject=TrackSheet%20demo">Book a demo</a>
+        <a class="btn" href="mailto:enquiries@tracksheet.co.uk?subject=TrackSheet%20demo">Book a demo</a>
         <a href="#how">See how it works</a>
       </div>
 
@@ -190,7 +195,7 @@ footer p{margin:0 0 6px}
         <li>
           <span class="n" aria-hidden="true">3</span>
           <h3>Sign and send</h3>
-          <p>Sign on screen, then download the PDF or share it straight to payroll from a phone. After the first week their details are remembered, so it's three clicks: open the portal, choose the week, download.</p>
+          <p>Sign on screen, then download the PDF or share it straight to payroll from a phone.</p>
         </li>
       </ol>
       <!--
@@ -203,19 +208,24 @@ footer p{margin:0 0 6px}
   </section>
 
   <section class="block" id="payroll" style="padding-top:0">
-    <div class="wrap split">
-      <div>
-        <h2>What payroll gets</h2>
-        <p>Less chasing, fewer corrections, and every timesheet in the same shape.</p>
+    <div class="wrap">
+      <div class="split">
+        <div>
+          <h2>What payroll gets</h2>
+          <p>Less chasing, fewer corrections, and every timesheet in the same shape.</p>
+        </div>
+        <dl class="list">
+          <div><dt>One format every time</dt><dd>Every timesheet arrives typed and laid out the same way, so there's nothing to decipher or retype.</dd></div>
+          <div><dt>Pay rates applied for you</dt><dd>Rates are set per role, with separate weekday and weekend rates, and you can set exceptions for individual people.</dd></div>
+          <div><dt>Less chasing</dt><dd>Staff can finish theirs in a few clicks from a phone, so fewer arrive late or incomplete.</dd></div>
+          <div><dt>Duplicate names sorted once</dt><dd>If the roster spells a name two ways, you merge them once and the fix applies to every week.</dd></div>
+        </dl>
       </div>
-      <dl class="list">
-        <div><dt>One format every time</dt><dd>Every timesheet arrives typed and laid out the same way, so there's nothing to decipher or retype.</dd></div>
-        <div><dt>Pay rates applied for you</dt><dd>Rates are set per role, with separate weekday and weekend rates, and you can set exceptions for individual people.</dd></div>
-        <div><dt>Less chasing</dt><dd>Staff can finish theirs in a few clicks from a phone, so fewer arrive late or incomplete.</dd></div>
-        <div><dt>One login, one person</dt><dd>Each login is locked to one name, so nobody can produce someone else's timesheet.</dd></div>
-        <div><dt>Duplicate names sorted once</dt><dd>If the roster spells a name two ways, you merge them once and the fix applies to every week.</dd></div>
-        <div><dt>Set up around your roster</dt><dd>We configure each portal for your roster layout, roles and pay rules, so nothing changes in how you work.</dd></div>
-      </dl>
+
+      <div class="feature">
+        <h3>Set up around your roster</h3>
+        <p>We configure each portal for your roster layout, roles and pay rules, so nothing changes in how you work.</p>
+      </div>
     </div>
   </section>
 
@@ -224,7 +234,6 @@ footer p{margin:0 0 6px}
       <h2>Where your data lives</h2>
       <p class="intro">Staff details are personal data, so each company's stays separate from everyone else's.</p>
       <ul class="facts">
-        <li><strong>Your own portal</strong>Every company gets a separate portal and database at its own address, such as yourcompany.tracksheet.co.uk. Nothing is shared between clients.</li>
         <li><strong>No IT project</strong>There's nothing to install, and we never need access to your systems or your domain.</li>
         <li><strong>Encrypted connections</strong>Everything travels over HTTPS between staff devices and the portal.</li>
         <li><strong>Deleted when you ask</strong>Ask us to remove one person's data or all of it, and it's deleted within 30 days.</li>
@@ -237,8 +246,8 @@ footer p{margin:0 0 6px}
       <h2>Priced per person, quoted for your team</h2>
       <p>A small monthly fee for each member of staff using the portal, with a lower rate for larger teams. Tell us your headcount and we'll send a fixed quote.</p>
       <div class="actions">
-        <a class="btn light" href="mailto:hello@tracksheet.co.uk?subject=TrackSheet%20demo">Book a demo</a>
-        <p class="contact">Or email <a href="mailto:hello@tracksheet.co.uk">hello@tracksheet.co.uk</a></p>
+        <a class="btn light" href="mailto:enquiries@tracksheet.co.uk?subject=TrackSheet%20demo">Book a demo</a>
+        <p class="contact">Or email <a href="mailto:enquiries@tracksheet.co.uk">enquiries@tracksheet.co.uk</a></p>
       </div>
     </div>
   </section>
