@@ -100,6 +100,11 @@ h2{font-size:clamp(1.7rem,3.4vw,2.4rem);line-height:1.12;letter-spacing:-.02em;m
   .stops li:not(:last-child)::after{top:36px;bottom:0;left:16px;right:auto;width:4px;height:auto}
 }
 
+/* demo video */
+.demo{margin:clamp(40px,6vw,72px) 0 0}
+.demo video{display:block;width:100%;height:auto;background:var(--board);border:3px solid var(--signage);border-radius:6px}
+.demo figcaption{margin-top:12px;font-size:.9rem;color:var(--ballast)}
+
 /* payroll */
 .split{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,2fr);gap:32px 64px}
 .list{margin:0}
@@ -198,12 +203,12 @@ footer p{margin:0 0 6px}
           <p>Sign on screen, then download the PDF or share it straight to payroll from a phone.</p>
         </li>
       </ol>
-      <!--
-        When your demo video is ready, drop it in here:
-        <video controls preload="none" style="width:100%;max-width:860px;margin-top:48px;border-radius:6px" poster="demo-poster.jpg">
+      <figure class="demo">
+        <video id="demoVideo" controls muted loop playsinline preload="metadata" poster="demo-poster.jpg" aria-label="Screen recording of a member of staff choosing their name, checking their shifts, signing and downloading a timesheet">
           <source src="demo.mp4" type="video/mp4">
         </video>
-      -->
+        <figcaption>A member of staff completing a timesheet. Sample data.</figcaption>
+      </figure>
     </div>
   </section>
 
@@ -260,5 +265,19 @@ footer p{margin:0 0 6px}
     <p>This site uses no cookies and no tracking.</p>
   </div>
 </footer>
+<script>
+/* Play the demo video only while it is on screen, and never autoplay for people who prefer reduced motion. */
+(function(){
+  var v = document.getElementById('demoVideo');
+  if(!v || !('IntersectionObserver' in window)) return;
+  if(window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  new IntersectionObserver(function(entries){
+    entries.forEach(function(e){
+      if(e.isIntersecting){ var p = v.play(); if(p && p.catch) p.catch(function(){}); }
+      else { v.pause(); }
+    });
+  }, {threshold:0.5}).observe(v);
+})();
+</script>
 </body>
 </html>
